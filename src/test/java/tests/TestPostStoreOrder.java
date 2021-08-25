@@ -8,7 +8,6 @@ import org.junit.jupiter.api.TestInstance;
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
 import static utilsAPI.ApiSpecification.REQUEST_SPECIFICATION;
-import static utilsAPI.JsonConv.convObjectToJson;
 import static utilsAPI.SchemaPath.orderJsonSchema;
 
 
@@ -24,10 +23,11 @@ public class TestPostStoreOrder {
                 "2021-08-25T15:31:41.369Z", "placed", true);
 
         given().spec(REQUEST_SPECIFICATION)
-                .body(convObjectToJson(order))
                 .when()
+                .body(order)
                 .post(EndPointsForTests.STORE + EndPointsForTests.ORDER)
                 .then()
+                .assertThat()
                 .body(matchesJsonSchema(orderJsonSchema));
 
     }
