@@ -1,4 +1,4 @@
-package user;
+package tests;
 
 import com.google.gson.JsonParser;
 import io.restassured.builder.RequestSpecBuilder;

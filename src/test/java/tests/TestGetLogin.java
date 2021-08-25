@@ -1,4 +1,4 @@
-package user;
+package tests;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -7,7 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import static io.restassured.RestAssured.given;
-import static utilsAPI.ApiSpecification.APISPECIFICATION;
+import static utilsAPI.ApiSpecification.REQUEST_SPECIFICATION;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 
@@ -18,7 +18,7 @@ public class TestGetLogin {
     @DisplayName("Check login status code")
     public void testGetLogin() {
         Response response = given()
-                .spec(APISPECIFICATION)
+                .spec(REQUEST_SPECIFICATION)
                 .baseUri(baseUri)
                 .accept(ContentType.JSON)
                 .queryParam("username", "Sv-user")

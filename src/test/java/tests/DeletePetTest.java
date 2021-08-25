@@ -1,4 +1,4 @@
-package user;
+package tests;
 
 public class DeletePetTest {
 }
