@@ -15,11 +15,12 @@ public class TestDeleteUser {
     @DisplayName("User deletion check")
     public void testDeleteUser (){
 
+
         User user = new User();
 
         Response response = given().spec(REQUEST_SPECIFICATION)
                 .when()
-                .delete(EndPointsForTests.USER + "/" + user.getId())
+                .delete(EndPointsForTests.USER + "/" + user.getUsername())
                 .prettyPeek()
                 .then()
                 .statusCode(200)

@@ -5,6 +5,7 @@ public class EndPointsForTests {
     public static final String STORE = "/store";
     public static final String ORDER = "/order";
     public static final String USER = "/user";
+    public static final String CATEGORY = "/category";
 
     }
 
